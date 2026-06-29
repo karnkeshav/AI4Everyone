@@ -109,6 +109,15 @@
 </head>
 <body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
 
+<!-- Track Detail Modal -->
+<div id="track-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+  <div id="track-modal-content" class="bg-white rounded-xl shadow-2xl w-full max-w-lg relative overflow-hidden">
+    <button onclick="closeTrackModal()" class="absolute top-4 right-4 z-10 text-white bg-black/30 hover:bg-black/50 rounded-full w-8 h-8 flex items-center justify-center">
+      <span class="material-symbols-outlined text-[20px]">close</span>
+    </button>
+  </div>
+</div>
+
 <!-- Contact Modal -->
 <div id="contact-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
   <div class="bg-white rounded-xl shadow-2xl w-full max-w-md p-8 relative">
@@ -270,8 +279,7 @@
         </div>
         <div class="pt-6 border-t border-white/10 flex justify-between items-center">
           <span class="text-lg font-bold">Premium Tier</span>
-          <button onclick="openModal('Track A — Executive AI Strategy', 'Connect with Keshav to learn more about this 5-day intensive track.')"
-                  class="text-executive-gold font-bold hover:underline">Learn More</button>
+          <button onclick="openTrackModal('A')" class="text-executive-gold font-bold hover:underline">Learn More</button>
         </div>
       </div>
       <!-- Track B -->
@@ -285,8 +293,7 @@
         </div>
         <div class="pt-6 border-t border-white/10 flex justify-between items-center">
           <span class="text-lg font-bold">Expert Tier</span>
-          <button onclick="openModal('Track B — Advanced AI Implementation', 'Connect with Keshav to learn more about this 10-day immersive track.')"
-                  class="text-executive-gold font-bold hover:underline">Learn More</button>
+          <button onclick="openTrackModal('B')" class="text-executive-gold font-bold hover:underline">Learn More</button>
         </div>
       </div>
       <!-- Track C -->
@@ -300,8 +307,7 @@
         </div>
         <div class="pt-6 border-t border-white/10 flex justify-between items-center">
           <span class="text-lg font-bold">Tactical Tier</span>
-          <button onclick="openModal('Track C — Tactical AI Solutions', 'Connect with Keshav to learn more about this 7-day practical track.')"
-                  class="text-executive-gold font-bold hover:underline">Learn More</button>
+          <button onclick="openTrackModal('C')" class="text-executive-gold font-bold hover:underline">Learn More</button>
         </div>
       </div>
     </div>
@@ -595,6 +601,127 @@
 </a>
 
 <script>
+  // ── Track Detail Modal ───────────────────────────────────────────────────────
+  const tracks = {
+    A: {
+      label: 'A',
+      accent: '#001B3D',
+      name: 'AI Productivity Essentials',
+      duration: '5 Days · 1hr/day',
+      offer: '50% Inaugural Offer',
+      original: '₹2,999',
+      price: '₹1,500',
+      tagline: 'Learn to talk to the machine.',
+      tagColor: '#001B3D',
+      points: [
+        'Understanding AI in simple language',
+        'Prompt & Content Engineering',
+        'Workflows for daily life & work',
+        'ChatGPT, Gemini, Claude, Grok — when to use what',
+        'Free vs Paid AI Tools — what actually matters',
+        'AI Hygiene, Privacy & Guardrails',
+        'NotebookLM & AI knowledge tools',
+        'AI Agents vs Agentic AI — the real difference',
+      ]
+    },
+    B: {
+      label: 'B',
+      accent: '#E65100',
+      name: 'AI App Builder',
+      duration: '10 Days · 1hr/day',
+      offer: '50% Inaugural Offer',
+      original: '₹6,999',
+      price: '₹3,500',
+      tagline: 'Build real things. No code.',
+      tagColor: '#E65100',
+      points: [
+        'Introduction to Vibe Coding',
+        'Building apps without traditional coding',
+        'GitHub, Vercel, Supabase & Firebase',
+        'Frontend + Backend development using AI',
+        'GitHub Actions & workflow automation',
+        'AI-powered web & mobile app development',
+        'Serverless deployment made simple',
+        'Launching SaaS products & AI tools quickly',
+      ]
+    },
+    C: {
+      label: 'C',
+      accent: '#007A8A',
+      name: 'Advanced AI Workflows',
+      duration: '7 Days · 1hr/day',
+      offer: '50% Inaugural Offer',
+      original: '₹4,999',
+      price: '₹2,500',
+      tagline: 'For those who want the full depth.',
+      tagColor: '#007A8A',
+      points: [
+        'API integrations, keys & unlimited workflows',
+        'Advanced automation systems using AI',
+        'Coding AI Agents (Copilot, Devin, Claude…)',
+        'Privacy-first & secure AI workflows',
+        'Creating personal GPTs & private AI assistants',
+        'Cloud AI on Azure, AWS & Google Cloud',
+        'Open-source models (Ollama, Mistral, DeepSeek)',
+        'Local AI setup & self-hosted systems',
+      ]
+    }
+  };
+
+  function openTrackModal(key) {
+    const t = tracks[key];
+    document.getElementById('track-modal-content').innerHTML = `
+      <button onclick="closeTrackModal()" class="absolute top-4 right-4 z-10 bg-black/30 hover:bg-black/50 text-white rounded-full w-8 h-8 flex items-center justify-center">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+      <!-- Header -->
+      <div class="flex items-center gap-4 p-6" style="background:${t.accent}">
+        <div class="w-12 h-12 rounded bg-white flex items-center justify-center font-black text-xl" style="color:${t.accent}">${t.label}</div>
+        <div>
+          <h3 class="text-white font-black text-xl leading-tight">${t.name}</h3>
+          <p class="text-white/70 text-sm">${t.duration}</p>
+        </div>
+      </div>
+      <!-- Offer banner -->
+      <div class="text-center py-2 text-white font-bold text-sm" style="background:${t.accent}cc">${t.offer}</div>
+      <!-- Price -->
+      <div class="px-6 pt-5 pb-2 flex items-baseline gap-3">
+        <span class="text-on-surface-variant line-through text-lg">${t.original}</span>
+        <span class="font-black text-4xl" style="color:${t.accent}">${t.price}</span>
+      </div>
+      <!-- Tagline -->
+      <p class="px-6 pb-4 font-bold italic text-lg" style="color:${t.accent}">${t.tagline}</p>
+      <!-- Points -->
+      <ul class="px-6 pb-6 space-y-2">
+        ${t.points.map(p => `
+        <li class="flex items-start gap-2 text-sm text-slate-700">
+          <span class="font-bold mt-0.5" style="color:${t.accent}">✓</span> ${p}
+        </li>`).join('')}
+      </ul>
+      <!-- CTA -->
+      <div class="px-6 pb-6">
+        <button onclick="closeTrackModal(); openModal('Track ${key} — ${t.name}', 'Connect with Keshav to reserve your seat for this track.')"
+                class="w-full py-3 rounded-lg font-bold text-white transition-all hover:brightness-110"
+                style="background:${t.accent}">
+          Reserve My Seat
+        </button>
+      </div>
+    `;
+    const m = document.getElementById('track-modal');
+    m.classList.remove('hidden');
+    m.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeTrackModal() {
+    const m = document.getElementById('track-modal');
+    m.classList.add('hidden');
+    m.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('track-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeTrackModal();
+  });
+
   // ── Contact Modal ────────────────────────────────────────────────────────────
   function openModal(title, subtitle) {
     document.getElementById('modal-title').textContent = title;
