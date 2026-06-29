@@ -1,13 +1,704 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover"/>
-<title>AI for EveryOne — Learn · Build · Ship</title>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Keshav Karn | AI Transformation Consultant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .bg-mesh {
+    background-color: #f8f9fa;
+    background-image: radial-gradient(at 0% 0%, rgba(197,140,0,0.05) 0px, transparent 50%),
+                      radial-gradient(at 100% 0%, rgba(0,27,61,0.05) 0px, transparent 50%);
+  }
+  html { scroll-behavior: smooth; }
+  #mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; }
+</style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "inverse-on-surface": "#f0f1f2",
+          "surface-tint": "#495f84",
+          "on-primary-fixed": "#001b3d",
+          "primary-fixed": "#d6e3ff",
+          "on-error-container": "#93000a",
+          "primary": "#000000",
+          "action-orange": "#E65100",
+          "surface-container-highest": "#e1e3e4",
+          "inverse-primary": "#b1c7f2",
+          "on-surface-variant": "#44474e",
+          "tertiary": "#000000",
+          "on-tertiary-container": "#e75201",
+          "outline-variant": "#c4c6cf",
+          "white": "#FFFFFF",
+          "background": "#f8f9fa",
+          "surface-variant": "#e1e3e4",
+          "secondary-fixed-dim": "#fcbb3d",
+          "on-primary-container": "#6f84ac",
+          "on-secondary-container": "#704e00",
+          "on-secondary-fixed-variant": "#5f4100",
+          "primary-container": "#001b3d",
+          "secondary": "#7d5700",
+          "tertiary-container": "#380d00",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#f3f4f5",
+          "on-primary": "#ffffff",
+          "error-container": "#ffdad6",
+          "surface-bright": "#f8f9fa",
+          "on-tertiary-fixed-variant": "#802a00",
+          "on-tertiary-fixed": "#380d00",
+          "on-surface": "#191c1d",
+          "secondary-fixed": "#ffdea9",
+          "on-primary-fixed-variant": "#31476b",
+          "slate-text": "#334155",
+          "on-error": "#ffffff",
+          "on-secondary": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "error": "#ba1a1a",
+          "outline": "#74777f",
+          "on-background": "#191c1d",
+          "surface-container": "#edeeef",
+          "tertiary-fixed-dim": "#ffb59a",
+          "secondary-container": "#ffbe40",
+          "surface-container-high": "#e7e8e9",
+          "surface": "#f8f9fa",
+          "executive-gold": "#C58C00",
+          "tertiary-fixed": "#ffdbcf",
+          "primary-fixed-dim": "#b1c7f2",
+          "on-secondary-fixed": "#271900",
+          "deep-navy": "#001B3D",
+          "inverse-surface": "#2e3132",
+          "surface-dim": "#d9dadb"
+        },
+        borderRadius: {
+          "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"
+        },
+        spacing: {
+          "gutter": "24px", "element-gap": "16px",
+          "section-gap": "80px", "container-max": "1200px", "margin-mobile": "16px"
+        },
+        fontFamily: {
+          "headline-lg-mobile": ["Hanken Grotesk"],
+          "headline-lg": ["Hanken Grotesk"],
+          "body-md": ["Inter"],
+          "subheading": ["Hanken Grotesk"],
+          "label-caps": ["Hanken Grotesk"],
+          "display-lg": ["Hanken Grotesk"],
+          "body-sm": ["Inter"]
+        },
+        fontSize: {
+          "headline-lg-mobile": ["28px", {"lineHeight":"1.2","fontWeight":"700"}],
+          "headline-lg": ["32px", {"lineHeight":"1.2","fontWeight":"700"}],
+          "body-md": ["16px", {"lineHeight":"1.6","fontWeight":"400"}],
+          "subheading": ["20px", {"lineHeight":"1.4","fontWeight":"600"}],
+          "label-caps": ["12px", {"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"700"}],
+          "display-lg": ["48px", {"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"800"}],
+          "body-sm": ["14px", {"lineHeight":"1.5","fontWeight":"400"}]
+        }
+      }
+    }
+  }
+</script>
 </head>
-<body>
-<script>window.APP_CONFIG = window.APP_CONFIG || {};</script>
-<script src="config.js"></script>
-<script src="app.js"></script>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
+
+<!-- Contact Modal -->
+<div id="contact-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+  <div class="bg-white rounded-xl shadow-2xl w-full max-w-md p-8 relative">
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-deep-navy">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <h3 class="font-headline-lg text-headline-lg text-deep-navy mb-2" id="modal-title">Reserve Your Consultation</h3>
+    <p class="text-slate-text text-body-sm mb-6" id="modal-subtitle">Choose how you'd like to connect with Keshav Karn.</p>
+    <div class="space-y-4">
+      <a href="https://wa.me/918520977573?text=Hi%20Keshav%2C%20I%27d%20like%20to%20book%20a%20strategic%20AI%20consultation." target="_blank"
+         class="flex items-center gap-4 w-full bg-[#25D366] text-white px-6 py-4 rounded-lg font-bold hover:brightness-110 transition-all">
+        <span class="material-symbols-outlined">chat</span> WhatsApp — Chat Now
+      </a>
+      <a href="tel:8520977573"
+         class="flex items-center gap-4 w-full bg-deep-navy text-white px-6 py-4 rounded-lg font-bold hover:bg-black transition-all">
+        <span class="material-symbols-outlined">call</span> Call: 85209 77573
+      </a>
+      <a href="mailto:keshav.karn@gmail.com?subject=AI%20Transformation%20Consultation%20Request"
+         class="flex items-center gap-4 w-full border-2 border-deep-navy text-deep-navy px-6 py-4 rounded-lg font-bold hover:bg-deep-navy hover:text-white transition-all">
+        <span class="material-symbols-outlined">mail</span> Email Me
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- TopNavBar -->
+<header class="bg-white shadow-sm border-b border-outline-variant docked full-width top-0 sticky z-50">
+  <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-20">
+    <a class="text-headline-lg font-headline-lg font-black text-deep-navy tracking-tight" href="#home">KESHAV KARN</a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center space-x-8">
+      <a class="text-executive-gold font-bold border-b-2 border-executive-gold pb-1 font-subheading text-subheading" href="#home">Home</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="#tracks">Solutions</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="#products">Products</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="#about">About</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a class="hidden sm:inline-flex items-center text-on-surface-variant hover:text-deep-navy font-semibold transition-all" href="tel:8520977573">
+        <span class="material-symbols-outlined mr-2">call</span> Call Me
+      </a>
+      <button onclick="openModal('Reserve a Strategic Consultation', 'Choose how you\'d like to connect with Keshav Karn.')"
+              class="bg-deep-navy text-white px-6 py-2.5 rounded-lg font-bold hover:bg-black transition-all active:scale-95">Consult Now</button>
+      <!-- Mobile hamburger -->
+      <button id="hamburger" onclick="toggleMobileMenu()" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+        <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-1"></span>
+        <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-2"></span>
+        <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-outline-variant px-gutter py-4 space-y-3">
+    <a onclick="closeMobileMenu()" class="block font-bold text-deep-navy py-2 hover:text-executive-gold" href="#home">Home</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="#tracks">Solutions</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="#products">Products</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="#corporate-solutions">Corporate</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="#about">Contact</a>
+  </div>
+</header>
+
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-mesh py-section-gap" id="home">
+  <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1 text-center md:text-left z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full mb-6 border border-executive-gold">
+        <span class="material-symbols-outlined text-[18px]">verified</span>
+        <span class="font-label-caps text-label-caps">TOP-TIER CONSULTANCY</span>
+      </div>
+      <h1 class="font-display-lg text-display-lg text-deep-navy mb-6 leading-tight">
+        Keshav Karn: <span class="text-executive-gold">AI Transformation</span> Consultant
+      </h1>
+      <p class="text-subheading font-subheading text-slate-text mb-8 max-w-2xl">
+        Empowering People. Transforming Futures. Leveraging 22+ years of domain expertise across Wipro, IBM, Kyndryl, and PwC to drive strategic AI adoption.
+      </p>
+      <div class="flex flex-wrap justify-center md:justify-start gap-4">
+        <button onclick="openModal('Reserve Strategic Consultation', 'Choose how you\'d like to connect with Keshav Karn.')"
+                class="bg-action-orange text-white px-8 py-4 rounded-lg font-bold text-lg hover:brightness-110 transition-all shadow-lg hover:shadow-action-orange/20">
+          Reserve Strategic Consultation
+        </button>
+        <div class="flex items-center gap-4 px-6 py-4 bg-white border border-outline-variant rounded-lg shadow-sm">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold">IBM</div>
+            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold">PwC</div>
+            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold">+2</div>
+          </div>
+          <span class="text-body-sm font-semibold">Trusted by Global Leaders</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1 relative">
+      <div class="relative z-10 w-full max-w-2xl mx-auto rounded-xl border-2 border-white/20 shadow-2xl overflow-hidden aspect-video bg-deep-navy">
+        <img alt="Keshav Karn Professional Card" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlvIpiEAFtNdPvhXClRECY0nPvgWi5UrnQeRSFmhi0FOErmiFy6rz-IC2F0T_J_rq4QH0yhq2ozCeHuK8hFavewMKehmYrmiuyXb30OCY_slkbrBCGgVDqG-OgvWR7Re4pHKSO2yeRRJCTUYclJIyOte8XvA58mK6VFU_xyGgT5cy41BFsvhHpmL9wjrJuMHbotoRAMH-fPZUjiq3Je7QMpWkSBXZYOFnn7CDxNgdH3P1eIb9Bu2QNDC5Efzs9Lq7XcOzv0t4cgsg">
+      </div>
+      <div class="absolute -top-10 -right-10 w-40 h-40 bg-executive-gold opacity-10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-deep-navy opacity-5 rounded-full blur-3xl"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof Bar -->
+<section class="bg-white py-12 border-y border-outline-variant">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <p class="text-center font-label-caps text-label-caps text-on-surface-variant mb-8">PARTNERED WITH GLOBAL ENTERPRISES</p>
+    <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 hover:opacity-100 transition-opacity">
+      <img class="h-8 md:h-12 w-auto grayscale" alt="IBM" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI86y9brmBUMzuaikQhJj9TzLZjYoTl1y1xJN9525BVt19bZ60uQZRlzZWYV7khcmPU5PhXEzCJv4MdglZPJUO5xSfSU2WJKvL0fXN-ZpeLJPnPTmpbOd8I4_Xm6BuvPp-0U9LwkME6UFxhrnyyubUQCdsgblcYXWeHrWZdyL09wmMlSNYETKW5d2meUA-q19zfYl2ny28lMYNADA6ozfQ8VnWN5KiFOe-AL1Te81QmxehhG93tDehxC1PQUzON6NW_dnKRx4rhy0">
+      <img class="h-8 md:h-12 w-auto grayscale" alt="Wipro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADDexm-tkXbIgAdFibVDSrFHWkoWZytGivYGib1Wtay3vTx2BllwzyccmcRgOKk3FcvdfXXWk5H51nKiqCNAe97OqACal7LS6X1QXrFXCpFcRrTqkHxkm5XLztwTyg4cTLltqjdXR_nrwOirkqfGrPbMTSI0yBAmLH6ScWKYGFQmq8C_zMNd3kLFT3GBLVW4W6AFxc9gubGxJwYrI3YUsfxw-PJGbgToIV5ITtqWtesKLTmxFQ1AUVIp6bQIon6kxom2OppwxiS2A">
+      <img class="h-8 md:h-12 w-auto grayscale" alt="PwC" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvD8ycDewE6nD0nYdjLZ8VFXf5gQgvE4Eorza5dJkY0akH45Mt7njh8kOJxF_Vsj2EwTLBLakVr04VoDOJYDuR8qHct69_lP0eZS7zPVpLvGvnPt8t1Z_srB2N3T2NNnxB0mGqoBkLks3ErgCimwzddMuJjCPDXf0v1ySO029oYKHz0ymuoT3uJy8msnA3q13ea0Ez5B0UjGJWt-CKlwN5IkyXBwjlTo2S9E_QxjwkQ5G8N1jQ_Q7c8R-44M_X40KEzTYaaioXRf0">
+      <img class="h-8 md:h-12 w-auto grayscale" alt="Kyndryl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOBjv8vMiBZyicco-y2MuN46JlBaoWg6yfI2f3LLOuG7rO-fSGAhDnOUM2OP2WEHhO1h7Pow6BpUKUcpcagbNTQV5dielpiMZiF-EEzObV51tB23pCUZe6Xe8v9kNaIporG4-pmzdCt767WMipu651fEHmPw4GB7t1ONf7pdfCe-DlhNnXbUfBXKN8KliFZlI61ehoTAkTxz6QiFC0-AaqW85cxHQLOUNlRxRaRcAmnkLTlJF2Ai9h4UaF8JdNDntqfwX7SCU-54k">
+    </div>
+  </div>
+</section>
+
+<!-- Stats & Expertise -->
+<section class="py-section-gap">
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div class="flex items-start gap-6 group transition-all duration-700">
+      <div class="w-16 h-16 rounded-lg bg-deep-navy flex items-center justify-center text-executive-gold shrink-0 transition-transform group-hover:scale-110">
+        <span class="material-symbols-outlined text-[32px]" style="font-variation-settings:'FILL' 1;">workspace_premium</span>
+      </div>
+      <div>
+        <h3 class="font-headline-lg text-headline-lg mb-2">22+ Years</h3>
+        <p class="text-slate-text">Of executive leadership and deep domain expertise in the global IT landscape.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-6 group transition-all duration-700">
+      <div class="w-16 h-16 rounded-lg bg-deep-navy flex items-center justify-center text-executive-gold shrink-0 transition-transform group-hover:scale-110">
+        <span class="material-symbols-outlined text-[32px]" style="font-variation-settings:'FILL' 1;">school</span>
+      </div>
+      <div>
+        <h3 class="font-headline-lg text-headline-lg mb-2">M.Tech &amp; PgP</h3>
+        <p class="text-slate-text">Advanced credentials from IIT Kanpur in Information Technology &amp; Management.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-6 group transition-all duration-700">
+      <div class="w-16 h-16 rounded-lg bg-deep-navy flex items-center justify-center text-executive-gold shrink-0 transition-transform group-hover:scale-110">
+        <span class="material-symbols-outlined text-[32px]" style="font-variation-settings:'FILL' 1;">psychology</span>
+      </div>
+      <div>
+        <h3 class="font-headline-lg text-headline-lg mb-2">AI Strategy</h3>
+        <p class="text-slate-text">Pioneering practical AI transformation without requiring coding knowledge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Empowerment Tracks -->
+<section class="bg-deep-navy text-white py-section-gap relative overflow-hidden" id="tracks">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,rgba(197,140,0,0.4),transparent_50%)]"></div>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="font-display-lg text-display-lg mb-4">Strategic Empowerment Tracks</h2>
+      <p class="text-subheading font-subheading text-surface-variant max-w-2xl mx-auto opacity-80">
+        Tailored learning journeys designed for executives, business leaders, and forward-thinking professionals.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Track A -->
+      <div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:border-executive-gold transition-all group duration-300">
+        <span class="font-label-caps text-label-caps text-executive-gold mb-4 block">01 / TRACK A</span>
+        <h3 class="font-subheading text-subheading mb-4 text-white">Executive AI Strategy</h3>
+        <p class="text-body-sm mb-6 opacity-70">Focus on ROI, change management, and high-level AI architectural decision making.</p>
+        <div class="flex items-center gap-2 mb-8">
+          <span class="material-symbols-outlined text-executive-gold">schedule</span>
+          <span class="font-semibold">5 Days Intensive</span>
+        </div>
+        <div class="pt-6 border-t border-white/10 flex justify-between items-center">
+          <span class="text-lg font-bold">Premium Tier</span>
+          <button onclick="openModal('Track A — Executive AI Strategy', 'Connect with Keshav to learn more about this 5-day intensive track.')"
+                  class="text-executive-gold font-bold hover:underline">Learn More</button>
+        </div>
+      </div>
+      <!-- Track B -->
+      <div class="bg-white/5 border border-executive-gold/40 p-8 rounded-xl hover:border-executive-gold transition-all group relative duration-300">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-executive-gold text-deep-navy px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Most Requested</div>
+        <span class="font-label-caps text-label-caps text-executive-gold mb-4 block">02 / TRACK B</span>
+        <h3 class="font-subheading text-subheading mb-4 text-white">Advanced AI Implementation</h3>
+        <p class="text-body-sm mb-6 opacity-70">Hands-on deployment of LLMs and custom AI agents within existing business workflows.</p>
+        <div class="flex items-center gap-2 mb-8">
+          <span class="material-symbols-outlined text-executive-gold">schedule</span>
+          <span class="font-semibold">10 Days Immersive</span>
+        </div>
+        <div class="pt-6 border-t border-white/10 flex justify-between items-center">
+          <span class="text-lg font-bold">Expert Tier</span>
+          <button onclick="openModal('Track B — Advanced AI Implementation', 'Connect with Keshav to learn more about this 10-day immersive track.')"
+                  class="text-executive-gold font-bold hover:underline">Learn More</button>
+        </div>
+      </div>
+      <!-- Track C -->
+      <div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:border-executive-gold transition-all group duration-300">
+        <span class="font-label-caps text-label-caps text-executive-gold mb-4 block">03 / TRACK C</span>
+        <h3 class="font-subheading text-subheading mb-4 text-white">Tactical AI Solutions</h3>
+        <p class="text-body-sm mb-6 opacity-70">Operationalizing AI for marketing, customer support, and internal automation tools.</p>
+        <div class="flex items-center gap-2 mb-8">
+          <span class="material-symbols-outlined text-executive-gold">schedule</span>
+          <span class="font-semibold">7 Days Practical</span>
+        </div>
+        <div class="pt-6 border-t border-white/10 flex justify-between items-center">
+          <span class="text-lg font-bold">Tactical Tier</span>
+          <button onclick="openModal('Track C — Tactical AI Solutions', 'Connect with Keshav to learn more about this 7-day practical track.')"
+                  class="text-executive-gold font-bold hover:underline">Learn More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strategic Combo -->
+    <div class="mt-12 bg-white rounded-xl p-8 flex flex-col md:flex-row items-center justify-between shadow-2xl gap-6">
+      <div class="text-on-surface">
+        <h3 class="font-subheading text-subheading text-deep-navy mb-2">Strategic Combo: AI Full-Stack Mastery</h3>
+        <p class="text-slate-text">The definitive blueprint for complete enterprise transformation and personal AI enablement.</p>
+      </div>
+      <div class="flex items-center gap-8 shrink-0">
+        <div class="text-right">
+          <p class="text-label-caps font-label-caps text-on-surface-variant">INVESTMENT</p>
+          <p class="text-4xl font-black text-deep-navy">₹15,000</p>
+        </div>
+        <button onclick="openModal('Secure Your Full Seat — AI Full-Stack Mastery', 'Reach out to Keshav to confirm your seat for the complete 22-day combo track.')"
+                class="bg-action-orange text-white px-8 py-4 rounded-lg font-bold hover:scale-105 transition-all whitespace-nowrap">
+          Secure Full Seat
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Group & Corporate Solutions -->
+<section class="py-section-gap bg-white" id="corporate-solutions">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-16">
+      <h2 class="font-display-lg text-display-lg text-deep-navy mb-4">Group &amp; Corporate Solutions</h2>
+      <p class="text-subheading font-subheading text-slate-text max-w-2xl mx-auto">
+        Scalable AI transformation programs designed for teams and entire organizations seeking a competitive edge.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-surface-container-low border border-outline-variant p-8 rounded-xl hover:shadow-xl transition-all">
+        <div class="w-16 h-16 rounded-lg bg-deep-navy flex items-center justify-center text-executive-gold mb-6">
+          <span class="material-symbols-outlined text-[32px]">groups</span>
+        </div>
+        <h3 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Team Empowerment</h3>
+        <p class="text-slate-text mb-8">Customized workshops for departments (Marketing, HR, Operations) to integrate AI into daily workflows and boost collective productivity.</p>
+        <button onclick="openModal('Team Empowerment — Request a Quote', 'Connect with Keshav to discuss a customized workshop for your team.')"
+                class="bg-action-orange text-white px-8 py-4 rounded-lg font-bold hover:brightness-110 transition-all w-full md:w-auto">
+          Request Quote
+        </button>
+      </div>
+      <div class="bg-surface-container-low border border-outline-variant p-8 rounded-xl hover:shadow-xl transition-all">
+        <div class="w-16 h-16 rounded-lg bg-deep-navy flex items-center justify-center text-executive-gold mb-6">
+          <span class="material-symbols-outlined text-[32px]">corporate_fare</span>
+        </div>
+        <h3 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Enterprise Transformation</h3>
+        <p class="text-slate-text mb-8">Full-scale corporate bookings including strategic roadmap development, custom AI tool deployment, and executive leadership coaching.</p>
+        <button onclick="openModal('Enterprise Transformation — Request a Quote', 'Connect with Keshav to discuss full-scale AI transformation for your organization.')"
+                class="bg-action-orange text-white px-8 py-4 rounded-lg font-bold hover:brightness-110 transition-all w-full md:w-auto">
+          Request Quote
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Product Portfolio -->
+<section class="py-section-gap bg-surface-container-low" id="products">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <h2 class="font-display-lg text-display-lg text-deep-navy mb-4">Enterprise AI Portfolio</h2>
+        <p class="text-subheading font-subheading text-slate-text max-w-xl">
+          High-performance, custom-built AI solutions ready for seamless corporate deployment and immediate ROI.
+        </p>
+      </div>
+      <button onclick="openModal('View the Complete AI Product Catalog', 'Get in touch with Keshav to explore the full range of enterprise AI solutions.')"
+              class="inline-flex items-center gap-2 text-deep-navy font-bold hover:text-executive-gold transition-colors whitespace-nowrap">
+        View Complete Catalog <span class="material-symbols-outlined">arrow_right_alt</span>
+      </button>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <!-- Featured Product 1 -->
+      <div class="md:col-span-2 bg-white border border-outline-variant p-8 rounded-xl flex flex-col justify-between group hover:shadow-xl transition-shadow">
+        <div>
+          <div class="flex justify-between items-start mb-6">
+            <div class="w-12 h-12 rounded bg-executive-gold/10 flex items-center justify-center text-executive-gold">
+              <span class="material-symbols-outlined text-[24px]" style="font-variation-settings:'FILL' 1;">description</span>
+            </div>
+            <span class="bg-deep-navy text-white text-[10px] px-2 py-1 rounded font-bold">FLAGSHIP</span>
+          </div>
+          <h3 class="font-subheading text-subheading text-deep-navy mb-2">Resume Elite Builder</h3>
+          <p class="text-body-sm text-slate-text mb-6">Automated, ATS-optimized executive profile crafting powered by industry-leading LLMs.</p>
+        </div>
+        <button onclick="openModal('Resume Elite Builder — Enterprise Inquiry', 'Connect with Keshav to deploy the Resume Elite Builder for your organization.')"
+                class="w-full border border-deep-navy py-3 rounded font-bold hover:bg-deep-navy hover:text-white transition-all">
+          Enterprise Inquire
+        </button>
+      </div>
+      <!-- Product 2 -->
+      <div class="bg-white border border-outline-variant p-6 rounded-xl flex flex-col justify-between group hover:shadow-lg transition-shadow">
+        <div>
+          <div class="w-10 h-10 rounded bg-deep-navy/10 flex items-center justify-center text-deep-navy mb-4">
+            <span class="material-symbols-outlined">school</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Ready4Exam</h3>
+          <p class="text-xs text-on-surface-variant">Adaptive exam preparation assistant.</p>
+        </div>
+        <button onclick="openModal('Ready4Exam — Custom Deployment', 'Get in touch to deploy Ready4Exam for your institution or organization.')"
+                class="mt-6 text-executive-gold font-bold text-sm hover:underline text-left">
+          Custom Deployment
+        </button>
+      </div>
+      <!-- Product 3 -->
+      <div class="bg-white border border-outline-variant p-6 rounded-xl flex flex-col justify-between group hover:shadow-lg transition-shadow">
+        <div>
+          <div class="w-10 h-10 rounded bg-deep-navy/10 flex items-center justify-center text-deep-navy mb-4">
+            <span class="material-symbols-outlined">translate</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">TeluguBuddy</h3>
+          <p class="text-xs text-on-surface-variant">Regional language LLM for localized business support.</p>
+        </div>
+        <button onclick="openModal('TeluguBuddy — Custom Deployment', 'Get in touch to deploy TeluguBuddy for your regional communication needs.')"
+                class="mt-6 text-executive-gold font-bold text-sm hover:underline text-left">
+          Custom Deployment
+        </button>
+      </div>
+      <!-- Product 4 -->
+      <div class="bg-white border border-outline-variant p-6 rounded-xl flex flex-col justify-between group hover:shadow-lg transition-shadow">
+        <div>
+          <div class="w-10 h-10 rounded bg-deep-navy/10 flex items-center justify-center text-deep-navy mb-4">
+            <span class="material-symbols-outlined">search_check</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">SEO Maestro</h3>
+          <p class="text-xs text-on-surface-variant">AI-driven semantic analysis and ranking optimizer.</p>
+        </div>
+        <button onclick="openModal('SEO Maestro — Custom Deployment', 'Get in touch to deploy SEO Maestro for your content and marketing team.')"
+                class="mt-6 text-executive-gold font-bold text-sm hover:underline text-left">
+          Custom Deployment
+        </button>
+      </div>
+      <!-- Featured Product 5 -->
+      <div class="md:col-span-2 bg-deep-navy text-white p-8 rounded-xl flex flex-col justify-between hover:bg-black transition-colors">
+        <div>
+          <span class="text-executive-gold font-label-caps text-label-caps mb-4 block">PREVIEW SOLUTION</span>
+          <h3 class="font-subheading text-subheading mb-4">Custom Enterprise AI Suite</h3>
+          <p class="text-body-sm opacity-70 mb-8">Bespoke tool development tailored to your specific organizational friction points and data silos.</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <button onclick="openModal('Custom Enterprise AI Suite — Request Whitepaper', 'Connect with Keshav to receive a detailed whitepaper on bespoke AI solutions for your organization.')"
+                  class="bg-executive-gold text-deep-navy px-6 py-3 rounded font-bold hover:brightness-110 transition-all">
+            Request Whitepaper
+          </button>
+          <span class="material-symbols-outlined text-executive-gold">lock</span>
+        </div>
+      </div>
+      <!-- Product 6 -->
+      <div class="bg-white border border-outline-variant p-6 rounded-xl flex flex-col justify-between group hover:shadow-lg transition-shadow">
+        <div>
+          <div class="w-10 h-10 rounded bg-deep-navy/10 flex items-center justify-center text-deep-navy mb-4">
+            <span class="material-symbols-outlined">chat</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">SupportBot AI</h3>
+          <p class="text-xs text-on-surface-variant">Sentiment-aware customer resolution engine.</p>
+        </div>
+        <button onclick="openModal('SupportBot AI — Custom Deployment', 'Get in touch to deploy SupportBot AI for your customer support operations.')"
+                class="mt-6 text-executive-gold font-bold text-sm hover:underline text-left">
+          Custom Deployment
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Empowerment Messaging -->
+<section class="py-section-gap bg-white overflow-hidden">
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div class="relative">
+      <div class="aspect-video rounded-xl overflow-hidden bg-deep-navy flex items-center justify-center">
+        <img class="w-full h-full object-cover opacity-60" alt="Modern executive boardroom"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDltDLJXw8wvbYAKsADJbT2fKOtCT_iaA7BDj78GCIa8w6jQNf2fX8ExYLX4Y6KREyX6d8mUixO4BTIZGYjqWjky6ii5YXnR5EwTVbWyMRFl4bU-4DMLOJ_7Z-dF67owcjZU1pWk4EEflReExlrH1lKc79ONwNWcx6cSsym8k8cQbtQVj3NdmdkWRC822Vxu1X3GvVsulekQTwX4PIu5fkYRyV7emW7lKb166Rj5lbFP3qpNRKiqH31Pv_eEJhBhwnco9uzmA1iKXw">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <button onclick="openModal('Book a Strategic Consultation', 'Ready to transform? Connect with Keshav to start your AI journey.')"
+                  class="w-20 h-20 bg-executive-gold rounded-full flex items-center justify-center text-deep-navy shadow-2xl hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-[40px]" style="font-variation-settings:'FILL' 1;">play_arrow</span>
+          </button>
+        </div>
+      </div>
+      <div class="absolute -bottom-8 -right-8 bg-white p-6 rounded-lg shadow-2xl border border-outline-variant hidden md:block">
+        <p class="text-executive-gold font-black text-2xl">NO CODING</p>
+        <p class="text-on-surface-variant font-bold">KNOWLEDGE REQUIRED</p>
+      </div>
+    </div>
+    <div>
+      <h2 class="font-display-lg text-display-lg text-deep-navy mb-8">AI Empowers You. <br><span class="text-executive-gold">Unlock Your Potential.</span></h2>
+      <ul class="space-y-6">
+        <li class="flex gap-4">
+          <span class="material-symbols-outlined text-executive-gold mt-1">check_circle</span>
+          <div>
+            <h4 class="font-bold text-deep-navy text-lg">Anyone Can Master It</h4>
+            <p class="text-slate-text">No technical background? No problem. Our frameworks are built for domain experts, not just developers.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="material-symbols-outlined text-executive-gold mt-1">check_circle</span>
+          <div>
+            <h4 class="font-bold text-deep-navy text-lg">Everyone Is Included</h4>
+            <p class="text-slate-text">AI is for everyone, everywhere. We democratize high-level technology for real-world impact.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="material-symbols-outlined text-executive-gold mt-1">check_circle</span>
+          <div>
+            <h4 class="font-bold text-deep-navy text-lg">Practical &amp; Result-Oriented</h4>
+            <p class="text-slate-text">Skip the theory. Move directly to implementing tools that save time and generate revenue.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="bg-deep-navy py-section-gap text-white relative" id="about">
+  <div class="max-w-container-max mx-auto px-gutter relative z-10 text-center">
+    <h2 class="font-display-lg text-display-lg mb-8">Ready to Transform?</h2>
+    <p class="text-subheading font-subheading mb-12 max-w-2xl mx-auto opacity-80">
+      Share your aspirations and we will make it happen. Strategic consulting for those who lead the future.
+    </p>
+    <div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
+      <a class="bg-white text-deep-navy px-12 py-5 rounded-lg font-bold text-xl hover:bg-executive-gold hover:text-white transition-all flex items-center justify-center gap-3" href="tel:8520977573">
+        <span class="material-symbols-outlined">call</span> 85209 77573
+      </a>
+      <a class="border-2 border-executive-gold text-white px-12 py-5 rounded-lg font-bold text-xl hover:bg-executive-gold/10 transition-all flex items-center justify-center gap-3"
+         href="mailto:keshav.karn@gmail.com?subject=AI%20Transformation%20Consultation">
+        <span class="material-symbols-outlined">mail</span> Email Me
+      </a>
+    </div>
+    <a href="https://www.linkedin.com/in/keshavkarn" target="_blank" rel="noopener noreferrer"
+       class="inline-flex items-center gap-4 text-surface-variant font-subheading hover:text-executive-gold transition-colors">
+      <span class="material-symbols-outlined">trending_up</span>
+      <span>linkedin.com/in/keshavkarn</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-deep-navy text-white border-t border-white/5">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-element-gap max-w-container-max mx-auto px-gutter py-section-gap">
+    <div class="space-y-6">
+      <span class="text-subheading font-subheading font-bold text-executive-gold block">KESHAV KARN</span>
+      <p class="font-body-sm text-body-sm text-surface-variant opacity-80 max-w-xs">
+        Specialized AI transformation consulting helping leaders navigate the complex landscape of emerging technology with confidence and strategy.
+      </p>
+      <div class="flex gap-4">
+        <a href="https://www.linkedin.com/in/keshavkarn" target="_blank" rel="noopener noreferrer"
+           class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-executive-gold hover:border-executive-gold transition-all duration-200"
+           aria-label="LinkedIn">
+          <span class="material-symbols-outlined text-[20px]">share</span>
+        </a>
+        <a href="https://wa.me/918520977573" target="_blank" rel="noopener noreferrer"
+           class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-executive-gold hover:border-executive-gold transition-all duration-200"
+           aria-label="WhatsApp">
+          <span class="material-symbols-outlined text-[20px]">chat</span>
+        </a>
+      </div>
+    </div>
+    <div class="space-y-6">
+      <span class="font-subheading text-subheading font-bold">Quick Navigation</span>
+      <ul class="space-y-4">
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="#home">Home</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="#tracks">Solutions</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="#products">Products</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="#corporate-solutions">Corporate</a></li>
+      </ul>
+    </div>
+    <div class="space-y-6">
+      <span class="font-subheading text-subheading font-bold">Policy &amp; Contact</span>
+      <ul class="space-y-4">
+        <li>
+          <a class="text-executive-gold hover:text-white transition-all duration-200" href="https://www.linkedin.com/in/keshavkarn" target="_blank" rel="noopener noreferrer">
+            LinkedIn Profile
+          </a>
+        </li>
+        <li>
+          <a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200"
+             href="mailto:keshav.karn@gmail.com?subject=Privacy%20Policy%20Inquiry">Privacy Policy</a>
+        </li>
+        <li>
+          <a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200"
+             href="mailto:keshav.karn@gmail.com?subject=Terms%20of%20Service%20Inquiry">Terms of Service</a>
+        </li>
+        <li>
+          <a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200"
+             href="mailto:keshav.karn@gmail.com?subject=Support%20Request">Contact Support</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto px-gutter py-8 border-t border-white/10 text-center">
+    <p class="font-body-sm text-body-sm text-surface-variant opacity-60">© 2025 Keshav Karn. Empowering People. Transforming Futures.</p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp CTA -->
+<a href="https://wa.me/918520977573?text=Hi%20Keshav%2C%20I%27d%20like%20to%20connect%20about%20AI%20transformation." target="_blank" rel="noopener noreferrer"
+   class="fixed bottom-8 right-8 z-50 flex items-center gap-3 bg-deep-navy text-white px-6 py-3 rounded-full shadow-2xl border border-executive-gold hover:bg-executive-gold hover:text-deep-navy transition-all duration-300">
+  <span class="material-symbols-outlined">chat</span>
+  <span class="font-bold">Clear Your Doubts</span>
+</a>
+
+<script>
+  // ── Contact Modal ────────────────────────────────────────────────────────────
+  function openModal(title, subtitle) {
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-subtitle').textContent = subtitle;
+    const m = document.getElementById('contact-modal');
+    m.classList.remove('hidden');
+    m.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    const m = document.getElementById('contact-modal');
+    m.classList.add('hidden');
+    m.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('contact-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // ── Mobile Menu ──────────────────────────────────────────────────────────────
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const open = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', open);
+    document.getElementById('ham-1').style.transform = open ? '' : 'translateY(8px) rotate(45deg)';
+    document.getElementById('ham-2').style.opacity  = open ? '' : '0';
+    document.getElementById('ham-3').style.transform = open ? '' : 'translateY(-8px) rotate(-45deg)';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.add('hidden');
+    document.getElementById('ham-1').style.transform = '';
+    document.getElementById('ham-2').style.opacity  = '';
+    document.getElementById('ham-3').style.transform = '';
+  }
+
+  // ── Scroll-aware nav highlight ───────────────────────────────────────────────
+  const sections = ['home','tracks','products','about'];
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(a => {
+          const active = a.getAttribute('href') === '#' + id;
+          a.classList.toggle('text-executive-gold', active);
+          a.classList.toggle('border-b-2', active);
+          a.classList.toggle('border-executive-gold', active);
+          a.classList.toggle('pb-1', active);
+          a.classList.toggle('text-on-surface-variant', !active);
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+
+  // ── Fade-in on scroll ────────────────────────────────────────────────────────
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+    fadeObserver.observe(el);
+  });
+</script>
 </body>
 </html>
