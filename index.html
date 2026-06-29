@@ -144,26 +144,111 @@
 </div>
 
 <!-- TopNavBar -->
-<header class="bg-white shadow-sm border-b border-outline-variant docked full-width top-0 sticky z-50">
+<header class="bg-white shadow-sm border-b border-outline-variant top-0 sticky z-50">
   <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-20">
-    <a class="text-headline-lg font-headline-lg font-black text-deep-navy tracking-tight" href="#home">KESHAV KARN</a>
+    <a class="text-headline-lg font-headline-lg font-black text-deep-navy tracking-tight shrink-0" href="#home">KESHAV KARN</a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center space-x-8">
-      <a class="text-executive-gold font-bold border-b-2 border-executive-gold pb-1 font-subheading text-subheading" href="#home">Home</a>
-      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="#tracks">Solutions</a>
-      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="#products">Products</a>
-      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="#about">About</a>
+    <nav class="hidden lg:flex items-center gap-1">
+
+      <!-- About (dropdown) -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 px-3 py-2 text-on-surface-variant hover:text-deep-navy font-semibold text-[15px] rounded-lg hover:bg-surface-container-low transition-all">
+          About <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
+        </button>
+        <div class="absolute top-full left-0 pt-2 hidden group-hover:block">
+          <div class="bg-white rounded-xl shadow-2xl border border-outline-variant w-48 py-2 overflow-hidden">
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">flag</span> Our Mission
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">person</span> About Me
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Programs (dropdown) -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 px-3 py-2 text-on-surface-variant hover:text-deep-navy font-semibold text-[15px] rounded-lg hover:bg-surface-container-low transition-all">
+          Programs <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
+        </button>
+        <div class="absolute top-full left-0 pt-2 hidden group-hover:block">
+          <div class="bg-white rounded-xl shadow-2xl border border-outline-variant w-52 py-2 overflow-hidden">
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">school</span> Class 9th
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">school</span> Class 11
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">fork_right</span> Stream Selection
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">explore</span> Pathfinder
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">menu_book</span> Academics School
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI & Innovation (dropdown) -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 px-3 py-2 text-executive-gold hover:text-deep-navy font-bold text-[15px] rounded-lg hover:bg-surface-container-low transition-all">
+          AI &amp; Innovation <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
+        </button>
+        <div class="absolute top-full left-0 pt-2 hidden group-hover:block">
+          <div class="bg-white rounded-xl shadow-2xl border border-outline-variant w-52 py-2 overflow-hidden">
+            <a href="#home" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">groups</span> AI for Everyone
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">rocket_launch</span> Let's Do AI
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">bolt</span> AI Launch
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services (dropdown) -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 px-3 py-2 text-on-surface-variant hover:text-deep-navy font-semibold text-[15px] rounded-lg hover:bg-surface-container-low transition-all">
+          Services <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
+        </button>
+        <div class="absolute top-full left-0 pt-2 hidden group-hover:block">
+          <div class="bg-white rounded-xl shadow-2xl border border-outline-variant w-48 py-2 overflow-hidden">
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">inventory</span> Offering
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">quiz</span> Assessment
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm text-on-surface hover:bg-surface-container-low hover:text-deep-navy transition-colors">
+              <span class="material-symbols-outlined text-executive-gold text-[18px]">sell</span> Pricing
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery (direct link) -->
+      <a href="#" class="px-3 py-2 text-on-surface-variant hover:text-deep-navy font-semibold text-[15px] rounded-lg hover:bg-surface-container-low transition-all">
+        Gallery
+      </a>
+
     </nav>
 
-    <div class="flex items-center gap-4">
-      <a class="hidden sm:inline-flex items-center text-on-surface-variant hover:text-deep-navy font-semibold transition-all" href="tel:8520977573">
-        <span class="material-symbols-outlined mr-2">call</span> Call Me
+    <div class="flex items-center gap-3">
+      <a class="hidden xl:inline-flex items-center text-on-surface-variant hover:text-deep-navy font-semibold transition-all text-sm" href="tel:8520977573">
+        <span class="material-symbols-outlined mr-1 text-[18px]">call</span> Call Me
       </a>
       <button onclick="openModal('Reserve a Strategic Consultation', 'Choose how you\'d like to connect with Keshav Karn.')"
-              class="bg-deep-navy text-white px-6 py-2.5 rounded-lg font-bold hover:bg-black transition-all active:scale-95">Consult Now</button>
+              class="bg-deep-navy text-white px-5 py-2.5 rounded-lg font-bold hover:bg-black transition-all active:scale-95 text-sm whitespace-nowrap">Consult Now</button>
       <!-- Mobile hamburger -->
-      <button id="hamburger" onclick="toggleMobileMenu()" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+      <button id="hamburger" onclick="toggleMobileMenu()" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
         <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-1"></span>
         <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-2"></span>
         <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-3"></span>
@@ -171,13 +256,76 @@
     </div>
   </div>
 
-  <!-- Mobile Nav -->
-  <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-outline-variant px-gutter py-4 space-y-3">
-    <a onclick="closeMobileMenu()" class="block font-bold text-deep-navy py-2 hover:text-executive-gold" href="#home">Home</a>
-    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="#tracks">Solutions</a>
-    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="#products">Products</a>
-    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="#corporate-solutions">Corporate</a>
-    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="#about">Contact</a>
+  <!-- Mobile Nav (full accordion) -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-outline-variant overflow-y-auto max-h-[80vh]">
+
+    <div class="px-gutter py-2 border-b border-outline-variant">
+      <p class="text-label-caps font-label-caps text-on-surface-variant py-2">ABOUT</p>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">flag</span> Our Mission
+      </a>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">person</span> About Me
+      </a>
+    </div>
+
+    <div class="px-gutter py-2 border-b border-outline-variant">
+      <p class="text-label-caps font-label-caps text-on-surface-variant py-2">PROGRAMS</p>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">school</span> Class 9th
+      </a>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">school</span> Class 11
+      </a>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">fork_right</span> Stream Selection
+      </a>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">explore</span> Pathfinder
+      </a>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">menu_book</span> Academics School
+      </a>
+    </div>
+
+    <div class="px-gutter py-2 border-b border-outline-variant">
+      <p class="text-label-caps font-label-caps text-executive-gold py-2">AI &amp; INNOVATION</p>
+      <a onclick="closeMobileMenu()" href="#home" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">groups</span> AI for Everyone
+      </a>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">rocket_launch</span> Let's Do AI
+      </a>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">bolt</span> AI Launch
+      </a>
+    </div>
+
+    <div class="px-gutter py-2 border-b border-outline-variant">
+      <p class="text-label-caps font-label-caps text-on-surface-variant py-2">SERVICES</p>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">inventory</span> Offering
+      </a>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">quiz</span> Assessment
+      </a>
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">sell</span> Pricing
+      </a>
+    </div>
+
+    <div class="px-gutter py-2 border-b border-outline-variant">
+      <a onclick="closeMobileMenu()" href="#" class="flex items-center gap-3 py-2.5 text-on-surface hover:text-executive-gold font-semibold">
+        <span class="material-symbols-outlined text-executive-gold text-[18px]">photo_library</span> College Visits Gallery
+      </a>
+    </div>
+
+    <div class="px-gutter py-4">
+      <a href="tel:8520977573" class="flex items-center gap-3 py-2.5 text-deep-navy font-bold">
+        <span class="material-symbols-outlined text-[18px]">call</span> 85209 77573
+      </a>
+    </div>
+
   </div>
 </header>
 
