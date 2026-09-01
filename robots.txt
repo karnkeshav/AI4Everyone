@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://karnkeshav.github.io/AI4Everyone/sitemap.xml
