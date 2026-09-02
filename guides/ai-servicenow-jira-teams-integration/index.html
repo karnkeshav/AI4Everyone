@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>How AI Can Connect ServiceNow, Jira and Teams | AI4Everyone Guides</title>
+<meta name="description" content="AI can connect to ServiceNow, Jira, and Microsoft Teams through APIs and MCP, letting it read tickets, update records, and post updates across all three systems as part of a single instruction.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://karnkeshav.github.io/AI4Everyone/guides/ai-servicenow-jira-teams-integration/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23001B3D'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-size='52' font-weight='900' fill='%23C58C00' text-anchor='middle'%3EKK%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI4Everyone">
+<meta property="og:title" content="How AI Can Connect ServiceNow, Jira and Teams">
+<meta property="og:description" content="AI can connect to ServiceNow, Jira, and Microsoft Teams through APIs and MCP, letting it read tickets, update records, and post updates across all three systems as part of a single instruction.">
+<meta property="og:url" content="https://karnkeshav.github.io/AI4Everyone/guides/ai-servicenow-jira-teams-integration/">
+<meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuBlvIpiEAFtNdPvhXClRECY0nPvgWi5UrnQeRSFmhi0FOErmiFy6rz-IC2F0T_J_rq4QH0yhq2ozCeHuK8hFavewMKehmYrmiuyXb30OCY_slkbrBCGgVDqG-OgvWR7Re4pHKSO2yeRRJCTUYclJIyOte8XvA58mK6VFU_xyGgT5cy41BFsvhHpmL9wjrJuMHbotoRAMH-fPZUjiq3Je7QMpWkSBXZYOFnn7CDxNgdH3P1eIb9Bu2QNDC5Efzs9Lq7XcOzv0t4cgsg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How AI Can Connect ServiceNow, Jira and Teams">
+<meta name="twitter:description" content="AI can connect to ServiceNow, Jira, and Microsoft Teams through APIs and MCP, letting it read tickets, update records, and post updates across all three systems as part of a single instruction.">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuBlvIpiEAFtNdPvhXClRECY0nPvgWi5UrnQeRSFmhi0FOErmiFy6rz-IC2F0T_J_rq4QH0yhq2ozCeHuK8hFavewMKehmYrmiuyXb30OCY_slkbrBCGgVDqG-OgvWR7Re4pHKSO2yeRRJCTUYclJIyOte8XvA58mK6VFU_xyGgT5cy41BFsvhHpmL9wjrJuMHbotoRAMH-fPZUjiq3Je7QMpWkSBXZYOFnn7CDxNgdH3P1eIb9Bu2QNDC5Efzs9Lq7XcOzv0t4cgsg">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://karnkeshav.github.io/AI4Everyone/#organization",
+      "name": "AI4Everyone",
+      "url": "https://karnkeshav.github.io/AI4Everyone/",
+      "sameAs": ["https://www.linkedin.com/in/keshavkarn","https://www.youtube.com/@Ready4industry","https://www.instagram.com/ready4industry"]
+    },
+    {
+      "@type": "Article",
+      "headline": "How AI Can Connect ServiceNow, Jira and Teams",
+      "author": { "@type": "Person", "name": "Keshav Karn", "url": "https://www.linkedin.com/in/keshavkarn" },
+      "publisher": { "@id": "https://karnkeshav.github.io/AI4Everyone/#organization" },
+      "datePublished": "2026-09-02",
+      "mainEntityOfPage": "https://karnkeshav.github.io/AI4Everyone/guides/ai-servicenow-jira-teams-integration/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://karnkeshav.github.io/AI4Everyone/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://karnkeshav.github.io/AI4Everyone/guides/" },
+        { "@type": "ListItem", "position": 3, "name": "How AI Can Connect ServiceNow, Jira and Teams", "item": "https://karnkeshav.github.io/AI4Everyone/guides/ai-servicenow-jira-teams-integration/" }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .bg-mesh { background-color: #f8f9fa; background-image: radial-gradient(at 0% 0%, rgba(197,140,0,0.05) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(0,27,61,0.05) 0px, transparent 50%); }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  #mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; }
+  @media (max-width: 639px) {
+    .text-display-lg { font-size: 26px !important; line-height: 1.15 !important; letter-spacing: -0.01em !important; }
+    .py-section-gap { padding-top: 48px !important; padding-bottom: 48px !important; }
+    .mb-16 { margin-bottom: 32px !important; }
+    .text-subheading { font-size: 16px !important; }
+    #float-wa-label { display: none; }
+    #contact-modal > div { padding: 24px !important; }
+  }
+  @media (min-width: 640px) and (max-width: 767px) {
+    .text-display-lg { font-size: 34px !important; line-height: 1.15 !important; }
+    .py-section-gap { padding-top: 60px !important; padding-bottom: 60px !important; }
+    #float-wa-label { display: none; }
+  }
+</style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: { extend: {
+      colors: {
+        "inverse-on-surface": "#f0f1f2","surface-tint": "#495f84","on-primary-fixed": "#001b3d","primary-fixed": "#d6e3ff","on-error-container": "#93000a","primary": "#000000","action-orange": "#E65100","surface-container-highest": "#e1e3e4","inverse-primary": "#b1c7f2","on-surface-variant": "#44474e","tertiary": "#000000","on-tertiary-container": "#e75201","outline-variant": "#c4c6cf","white": "#FFFFFF","background": "#f8f9fa","surface-variant": "#e1e3e4","secondary-fixed-dim": "#fcbb3d","on-primary-container": "#6f84ac","on-secondary-container": "#704e00","on-secondary-fixed-variant": "#5f4100","primary-container": "#001b3d","secondary": "#7d5700","tertiary-container": "#380d00","surface-container-lowest": "#ffffff","surface-container-low": "#f3f4f5","on-primary": "#ffffff","error-container": "#ffdad6","surface-bright": "#f8f9fa","on-tertiary-fixed-variant": "#802a00","on-tertiary-fixed": "#380d00","on-surface": "#191c1d","secondary-fixed": "#ffdea9","on-primary-fixed-variant": "#31476b","slate-text": "#334155","on-error": "#ffffff","on-secondary": "#ffffff","on-tertiary": "#ffffff","error": "#ba1a1a","outline": "#74777f","on-background": "#191c1d","surface-container": "#edeeef","tertiary-fixed-dim": "#ffb59a","secondary-container": "#ffbe40","surface-container-high": "#e7e8e9","surface": "#f8f9fa","executive-gold": "#C58C00","tertiary-fixed": "#ffdbcf","primary-fixed-dim": "#b1c7f2","on-secondary-fixed": "#271900","deep-navy": "#001B3D","inverse-surface": "#2e3132","surface-dim": "#d9dadb","stream2-teal": "#007A8A"
+      },
+      borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+      spacing: { "gutter": "24px", "element-gap": "16px", "section-gap": "80px", "container-max": "1200px", "margin-mobile": "16px" },
+      fontFamily: { "headline-lg-mobile": ["Hanken Grotesk"], "headline-lg": ["Hanken Grotesk"], "body-md": ["Inter"], "subheading": ["Hanken Grotesk"], "label-caps": ["Hanken Grotesk"], "display-lg": ["Hanken Grotesk"], "body-sm": ["Inter"] },
+      fontSize: { "headline-lg-mobile": ["28px", {"lineHeight":"1.2","fontWeight":"700"}], "headline-lg": ["32px", {"lineHeight":"1.2","fontWeight":"700"}], "body-md": ["16px", {"lineHeight":"1.6","fontWeight":"400"}], "subheading": ["20px", {"lineHeight":"1.4","fontWeight":"600"}], "label-caps": ["12px", {"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"700"}], "display-lg": ["48px", {"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"800"}], "body-sm": ["14px", {"lineHeight":"1.5","fontWeight":"400"}] }
+    } }
+  }
+</script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
+
+<!-- Contact Modal -->
+<div id="contact-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+  <div class="bg-white rounded-xl shadow-2xl w-full max-w-md p-8 relative">
+    <button onclick="closeModal()" aria-label="Close" class="absolute top-4 right-4 text-on-surface-variant hover:text-deep-navy">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
+    <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-2" id="modal-title">Reserve Your Session</h2>
+    <p class="text-slate-text text-body-sm mb-6" id="modal-subtitle">Choose how you'd like to connect with Keshav Karn.</p>
+    <div class="space-y-4">
+      <a href="https://wa.me/918520977573?text=Hi%20Keshav%2C%20I%27d%20like%20to%20book%20a%20strategic%20AI%20consultation." target="_blank"
+         class="flex items-center gap-4 w-full bg-[#25D366] text-white px-6 py-4 rounded-lg font-bold hover:brightness-110 transition-all">
+        <span class="material-symbols-outlined" aria-hidden="true">chat</span> WhatsApp — Chat Now
+      </a>
+      <a href="tel:8520977573"
+         class="flex items-center gap-4 w-full bg-deep-navy text-white px-6 py-4 rounded-lg font-bold hover:bg-black transition-all">
+        <span class="material-symbols-outlined" aria-hidden="true">call</span> Call: 85209 77573
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&to=keshav.karn@gmail.com&su=AI%20Transformation%20Consultation%20Request" target="_blank" rel="noopener noreferrer"
+         class="flex items-center gap-4 w-full border-2 border-deep-navy text-deep-navy px-6 py-4 rounded-lg font-bold hover:bg-deep-navy hover:text-white transition-all">
+        <span class="material-symbols-outlined" aria-hidden="true">mail</span> Email Me
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- TopNavBar -->
+<header class="bg-white shadow-sm border-b border-outline-variant top-0 sticky z-50">
+  <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-20">
+    <a class="text-headline-lg font-headline-lg font-black text-deep-navy tracking-tight" href="/AI4Everyone/">AI4EVERYONE</a>
+    <nav class="hidden md:flex items-center space-x-8" aria-label="Primary">
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/">Home</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/#stream-1">AI Builder</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/#stream-2">AI Engineering</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/enterprise-ai/">Build With Us</a>
+      <a class="text-executive-gold font-bold border-b-2 border-executive-gold pb-1 font-subheading text-subheading" href="/AI4Everyone/guides/">Guides</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/#about">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a class="hidden sm:inline-flex items-center text-on-surface-variant hover:text-deep-navy font-semibold transition-all" href="tel:8520977573">
+        <span class="material-symbols-outlined mr-2" aria-hidden="true">call</span> Call Me
+      </a>
+      <button onclick="trackEvent('free_session_click',{location:'nav'});openModal('Join a Free Session', 'Connect with Keshav to get the next free session details and reserve your spot.')"
+              class="bg-deep-navy text-white px-6 py-2.5 rounded-lg font-bold hover:bg-black transition-all active:scale-95">Free Session</button>
+      <button id="hamburger" onclick="toggleMobileMenu()" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-1"></span>
+        <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-2"></span>
+        <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-3"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-outline-variant px-gutter py-4 space-y-3">
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/">Home</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/#stream-1">AI Builder</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/#stream-2">AI Engineering</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/enterprise-ai/">Build With Us</a>
+    <a onclick="closeMobileMenu()" class="block text-executive-gold font-bold border-b-2 border-executive-gold pb-1 py-2 w-fit" href="/AI4Everyone/guides/">Guides</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/#about">Contact</a>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="max-w-container-max mx-auto px-gutter pt-6 text-sm text-slate-text">
+  <a href="/AI4Everyone/" class="hover:text-executive-gold">Home</a> / <a href="/AI4Everyone/guides/" class="hover:text-executive-gold">Guides</a> / <span class="text-deep-navy font-semibold">How AI Can Connect ServiceNow, Jira and Teams</span>
+</div>
+
+<main>
+<section class="bg-mesh py-section-gap">
+  <div class="max-w-container-max mx-auto px-gutter max-w-3xl">
+    <span class="font-label-caps text-label-caps text-action-orange block mb-3">GUIDES · CLOUD &amp; ENTERPRISE</span>
+    <h1 class="font-display-lg text-display-lg text-deep-navy mb-6 leading-tight">How AI Can Connect ServiceNow, Jira and Teams</h1>
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-text">
+      <span>By <a href="https://www.linkedin.com/in/keshavkarn" target="_blank" rel="noopener noreferrer" class="font-bold text-deep-navy hover:text-executive-gold">Keshav Karn</a></span>
+      <span aria-hidden="true">·</span>
+      <span>22+ years enterprise technology leadership, Founder of AI4Everyone</span>
+    </div>
+  </div>
+</section>
+
+<article class="py-section-gap bg-white">
+  <div class="max-w-container-max mx-auto px-gutter max-w-3xl">
+    <p class="text-subheading font-subheading text-slate-text leading-relaxed mb-8">AI can connect to ServiceNow, Jira, and Microsoft Teams through APIs and MCP, letting it read tickets, update records, and post updates across all three systems as part of a single instruction. Instead of a person manually checking each tool and copying information between them, an AI system can move across all three directly.</p>
+
+    <h2 class="font-headline-lg text-headline-lg text-deep-navy mt-8 mb-3">Why these three systems together</h2>
+    <p class="text-slate-text leading-relaxed mb-4">ServiceNow (ITSM/ITOM), Jira (engineering issue tracking), and Microsoft Teams (collaboration and communication) sit at the center of how most enterprises actually run day-to-day operations — an incident gets logged in ServiceNow, a related engineering bug is tracked in Jira, and the team discusses and coordinates the response in Teams. These three systems rarely talk to each other automatically out of the box, which means someone typically has to check each one and manually relay context between them.</p>
+
+    <h2 class="font-headline-lg text-headline-lg text-deep-navy mt-8 mb-3">A worked example: investigating an incident</h2>
+    <p class="text-slate-text leading-relaxed mb-4">Consider an AI system connected to all three via MCP or direct API integrations. Given an instruction like "investigate the current P1 incident and give me a status," it can look up the incident record in ServiceNow, check whether a related Jira ticket exists (or search for one based on the description), review any linked Teams conversation for the latest human updates, and assemble a single coherent summary — potentially also posting that summary back to Teams for the team to see. The AI is doing the cross-system correlation work a person would otherwise do by hand.</p>
+
+    <h2 class="font-headline-lg text-headline-lg text-deep-navy mt-8 mb-3">Where this fits into ITSM/ITOM automation</h2>
+    <p class="text-slate-text leading-relaxed mb-4">This kind of connection is a natural extension of existing ITSM/ITOM automation efforts — the difference is that instead of building a fixed, rule-based workflow for one specific scenario, an AI system directed by natural language can handle a wider range of requests without a developer writing new integration logic for each one. As with any automation touching production systems, the same governance principles apply: scoped permissions, logging, and human approval before higher-risk actions (like closing a ticket or messaging a wide channel) execute automatically.</p>
+
+    <div class="mt-12 bg-surface-container-low border border-outline-variant rounded-xl p-8">
+      <h3 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Continue Learning</h3>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/AI4Everyone/enterprise-ai/" class="flex-1 bg-deep-navy text-white px-6 py-4 rounded-lg font-bold text-center hover:bg-black transition-all">Enterprise AI Services →</a>
+        <a href="/AI4Everyone/ai-for-it-professionals/" class="flex-1 border-2 border-deep-navy text-deep-navy px-6 py-4 rounded-lg font-bold text-center hover:bg-deep-navy hover:text-white transition-all">AI for IT Professionals →</a>
+      </div>
+    </div>
+  </div>
+</article>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-deep-navy text-white border-t border-white/5">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-element-gap max-w-container-max mx-auto px-gutter py-section-gap">
+    <div class="space-y-6">
+      <span class="text-subheading font-subheading font-bold text-executive-gold block">AI4EVERYONE</span>
+      <p class="font-body-sm text-body-sm text-surface-variant opacity-80 max-w-xs">Practical AI education and AI engineering — from a 22+ year enterprise technology leader. Learn to make AI work.</p>
+      <div class="flex gap-4">
+        <a href="https://www.linkedin.com/in/keshavkarn" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-executive-gold hover:border-executive-gold transition-all duration-200" aria-label="LinkedIn"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">share</span></a>
+        <a href="https://wa.me/918520977573" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-executive-gold hover:border-executive-gold transition-all duration-200" aria-label="WhatsApp"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">chat</span></a>
+        <a href="https://www.youtube.com/@Ready4industry" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-executive-gold hover:border-executive-gold transition-all duration-200" aria-label="YouTube"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">smart_display</span></a>
+        <a href="https://www.instagram.com/ready4industry" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-executive-gold hover:border-executive-gold transition-all duration-200" aria-label="Instagram"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">photo_camera</span></a>
+      </div>
+    </div>
+    <div class="space-y-6">
+      <span class="font-subheading text-subheading font-bold">Quick Navigation</span>
+      <ul class="space-y-4">
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="/AI4Everyone/">Home</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="/AI4Everyone/#stream-1">AI Builder</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="/AI4Everyone/#stream-2">AI Engineering</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="/AI4Everyone/enterprise-ai/">Build With Us</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="/AI4Everyone/guides/">Guides</a></li>
+      </ul>
+    </div>
+    <div class="space-y-6">
+      <span class="font-subheading text-subheading font-bold">Contact</span>
+      <ul class="space-y-4">
+        <li><a class="inline-flex items-center gap-2 text-executive-gold hover:text-white transition-all duration-200" href="https://www.linkedin.com/in/keshavkarn" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">share</span> linkedin.com/in/keshavkarn</a></li>
+        <li><a class="inline-flex items-center gap-2 text-surface-variant opacity-80 hover:text-white hover:opacity-100 transition-all duration-200" href="https://www.youtube.com/@Ready4industry" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">smart_display</span> @Ready4industry</a></li>
+        <li><a class="inline-flex items-center gap-2 text-surface-variant opacity-80 hover:text-white hover:opacity-100 transition-all duration-200" href="mailto:keshav.karn@gmail.com?subject=Support%20Request"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">mail</span> Contact Support</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918520977573?text=Hi%20Keshav%2C%20I%27d%20like%20to%20connect%20about%20AI4Everyone." target="_blank" rel="noopener noreferrer" onclick="trackEvent('whatsapp_click',{location:'floating_button'})" class="fixed bottom-8 right-8 z-50 flex items-center gap-3 bg-deep-navy text-white px-6 py-3 rounded-full shadow-2xl border border-executive-gold hover:bg-executive-gold hover:text-deep-navy transition-all duration-300">
+  <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+  <span class="font-bold" id="float-wa-label">Clear Your Doubts</span>
+</a>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function trackEvent(name, params) { window.dataLayer.push(Object.assign({ event: name }, params || {})); }
+
+  function openModal(title, subtitle) {
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-subtitle').textContent = subtitle;
+    const m = document.getElementById('contact-modal');
+    m.classList.remove('hidden'); m.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    const m = document.getElementById('contact-modal');
+    m.classList.add('hidden'); m.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('contact-modal').addEventListener('click', function(e){ if (e.target === this) closeModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger');
+    const open = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', open);
+    hamburger.setAttribute('aria-expanded', String(!open));
+    document.getElementById('ham-1').style.transform = open ? '' : 'translateY(8px) rotate(45deg)';
+    document.getElementById('ham-2').style.opacity  = open ? '' : '0';
+    document.getElementById('ham-3').style.transform = open ? '' : 'translateY(-8px) rotate(-45deg)';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.add('hidden');
+    document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+    document.getElementById('ham-1').style.transform = '';
+    document.getElementById('ham-2').style.opacity  = '';
+    document.getElementById('ham-3').style.transform = '';
+  }
+</script>
+</body>
+</html>

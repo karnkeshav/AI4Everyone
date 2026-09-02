@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Agentic AI Explained | AI Agents vs Agentic AI | AI4Everyone</title>
+<meta name="description" content="What agentic AI is, how it differs from a single AI agent, and how to learn tool calling, MCP, AI agents and agentic coding with Claude Code, Codex and Antigravity — Stream 2 Track 2 at AI4Everyone.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://karnkeshav.github.io/AI4Everyone/agentic-ai/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23001B3D'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-size='52' font-weight='900' fill='%23C58C00' text-anchor='middle'%3EKK%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI4Everyone">
+<meta property="og:title" content="Agentic AI Explained | AI Agents vs Agentic AI | AI4Everyone">
+<meta property="og:description" content="What agentic AI is, how it differs from a single AI agent, and how to learn tool calling, MCP and agentic coding — Stream 2 Track 2 at AI4Everyone.">
+<meta property="og:url" content="https://karnkeshav.github.io/AI4Everyone/agentic-ai/">
+<meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuBlvIpiEAFtNdPvhXClRECY0nPvgWi5UrnQeRSFmhi0FOErmiFy6rz-IC2F0T_J_rq4QH0yhq2ozCeHuK8hFavewMKehmYrmiuyXb30OCY_slkbrBCGgVDqG-OgvWR7Re4pHKSO2yeRRJCTUYclJIyOte8XvA58mK6VFU_xyGgT5cy41BFsvhHpmL9wjrJuMHbotoRAMH-fPZUjiq3Je7QMpWkSBXZYOFnn7CDxNgdH3P1eIb9Bu2QNDC5Efzs9Lq7XcOzv0t4cgsg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agentic AI Explained | AI Agents vs Agentic AI | AI4Everyone">
+<meta name="twitter:description" content="What agentic AI is, how it differs from a single AI agent, and how to learn tool calling, MCP and agentic coding — Stream 2 Track 2 at AI4Everyone.">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuBlvIpiEAFtNdPvhXClRECY0nPvgWi5UrnQeRSFmhi0FOErmiFy6rz-IC2F0T_J_rq4QH0yhq2ozCeHuK8hFavewMKehmYrmiuyXb30OCY_slkbrBCGgVDqG-OgvWR7Re4pHKSO2yeRRJCTUYclJIyOte8XvA58mK6VFU_xyGgT5cy41BFsvhHpmL9wjrJuMHbotoRAMH-fPZUjiq3Je7QMpWkSBXZYOFnn7CDxNgdH3P1eIb9Bu2QNDC5Efzs9Lq7XcOzv0t4cgsg">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://karnkeshav.github.io/AI4Everyone/#organization",
+      "name": "AI4Everyone",
+      "url": "https://karnkeshav.github.io/AI4Everyone/",
+      "sameAs": ["https://www.linkedin.com/in/keshavkarn","https://www.youtube.com/@Ready4industry","https://www.instagram.com/ready4industry"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://karnkeshav.github.io/AI4Everyone/agentic-ai/#webpage",
+      "url": "https://karnkeshav.github.io/AI4Everyone/agentic-ai/",
+      "name": "Agentic AI Explained",
+      "isPartOf": { "@id": "https://karnkeshav.github.io/AI4Everyone/#website" },
+      "about": { "@id": "https://karnkeshav.github.io/AI4Everyone/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://karnkeshav.github.io/AI4Everyone/" },
+        { "@type": "ListItem", "position": 2, "name": "Agentic AI", "item": "https://karnkeshav.github.io/AI4Everyone/agentic-ai/" }
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "AI Integration & Agent Engineering — Stream 2, Track 2",
+      "description": "Tool calling, MCP, AI agents, agentic coding, and integration with GitHub, Jira and ServiceNow.",
+      "provider": { "@id": "https://karnkeshav.github.io/AI4Everyone/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is agentic AI?", "acceptedAnswer": { "@type": "Answer", "text": "Agentic AI describes AI systems that can plan, use tools, and take multi-step action toward a goal with limited human intervention — rather than just responding once to a single prompt. It builds on tool calling and coordination across steps and, often, across multiple agents." } },
+        { "@type": "Question", "name": "What is the difference between an AI agent and agentic AI?", "acceptedAnswer": { "@type": "Answer", "text": "An AI agent is typically one instance — a single AI system given a goal, tools and the ability to act on its own. Agentic AI is the broader approach or category: systems (one agent or several working together) that plan, use tools, and act autonomously across multiple steps. Every AI agent is an example of agentic AI, but agentic AI also covers multi-agent and orchestrated systems." } },
+        { "@type": "Question", "name": "What is agentic coding?", "acceptedAnswer": { "@type": "Answer", "text": "Agentic coding is using an AI coding agent — such as Claude Code, Codex, or Antigravity — to plan, write, test and modify code across a project with natural-language instructions, instead of writing every line by hand. The agent can read files, run commands and iterate toward a goal." } },
+        { "@type": "Question", "name": "How does MCP relate to agentic AI?", "acceptedAnswer": { "@type": "Answer", "text": "MCP provides a standardized way for AI systems to access authorized tools and resources so AI can perform work instead of simply generating answers. It is what lets an agentic AI system reliably reach real tools and data — including enterprise systems like GitHub, Jira and ServiceNow." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .bg-mesh { background-color: #f8f9fa; background-image: radial-gradient(at 0% 0%, rgba(197,140,0,0.05) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(0,27,61,0.05) 0px, transparent 50%); }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  #mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; }
+  .flow-step { min-width: 0; }
+  .flow-arrow { color: #C58C00; }
+  @media (max-width: 639px) {
+    .text-display-lg { font-size: 26px !important; line-height: 1.15 !important; letter-spacing: -0.01em !important; }
+    .py-section-gap { padding-top: 48px !important; padding-bottom: 48px !important; }
+    .mb-16 { margin-bottom: 32px !important; }
+    .text-subheading { font-size: 16px !important; }
+    #float-wa-label { display: none; }
+    #contact-modal > div { padding: 24px !important; }
+    .flow-diagram { flex-direction: column !important; }
+    .flow-arrow.horizontal { transform: rotate(90deg); }
+  }
+  @media (min-width: 640px) and (max-width: 767px) {
+    .text-display-lg { font-size: 34px !important; line-height: 1.15 !important; }
+    .py-section-gap { padding-top: 60px !important; padding-bottom: 60px !important; }
+    #float-wa-label { display: none; }
+  }
+</style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: { extend: {
+      colors: {
+        "inverse-on-surface": "#f0f1f2","surface-tint": "#495f84","on-primary-fixed": "#001b3d","primary-fixed": "#d6e3ff","on-error-container": "#93000a","primary": "#000000","action-orange": "#E65100","surface-container-highest": "#e1e3e4","inverse-primary": "#b1c7f2","on-surface-variant": "#44474e","tertiary": "#000000","on-tertiary-container": "#e75201","outline-variant": "#c4c6cf","white": "#FFFFFF","background": "#f8f9fa","surface-variant": "#e1e3e4","secondary-fixed-dim": "#fcbb3d","on-primary-container": "#6f84ac","on-secondary-container": "#704e00","on-secondary-fixed-variant": "#5f4100","primary-container": "#001b3d","secondary": "#7d5700","tertiary-container": "#380d00","surface-container-lowest": "#ffffff","surface-container-low": "#f3f4f5","on-primary": "#ffffff","error-container": "#ffdad6","surface-bright": "#f8f9fa","on-tertiary-fixed-variant": "#802a00","on-tertiary-fixed": "#380d00","on-surface": "#191c1d","secondary-fixed": "#ffdea9","on-primary-fixed-variant": "#31476b","slate-text": "#334155","on-error": "#ffffff","on-secondary": "#ffffff","on-tertiary": "#ffffff","error": "#ba1a1a","outline": "#74777f","on-background": "#191c1d","surface-container": "#edeeef","tertiary-fixed-dim": "#ffb59a","secondary-container": "#ffbe40","surface-container-high": "#e7e8e9","surface": "#f8f9fa","executive-gold": "#C58C00","tertiary-fixed": "#ffdbcf","primary-fixed-dim": "#b1c7f2","on-secondary-fixed": "#271900","deep-navy": "#001B3D","inverse-surface": "#2e3132","surface-dim": "#d9dadb","stream2-teal": "#007A8A"
+      },
+      borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+      spacing: { "gutter": "24px", "element-gap": "16px", "section-gap": "80px", "container-max": "1200px", "margin-mobile": "16px" },
+      fontFamily: { "headline-lg-mobile": ["Hanken Grotesk"], "headline-lg": ["Hanken Grotesk"], "body-md": ["Inter"], "subheading": ["Hanken Grotesk"], "label-caps": ["Hanken Grotesk"], "display-lg": ["Hanken Grotesk"], "body-sm": ["Inter"] },
+      fontSize: { "headline-lg-mobile": ["28px", {"lineHeight":"1.2","fontWeight":"700"}], "headline-lg": ["32px", {"lineHeight":"1.2","fontWeight":"700"}], "body-md": ["16px", {"lineHeight":"1.6","fontWeight":"400"}], "subheading": ["20px", {"lineHeight":"1.4","fontWeight":"600"}], "label-caps": ["12px", {"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"700"}], "display-lg": ["48px", {"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"800"}], "body-sm": ["14px", {"lineHeight":"1.5","fontWeight":"400"}] }
+    } }
+  }
+</script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
+
+<!-- Contact Modal -->
+<div id="contact-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+  <div class="bg-white rounded-xl shadow-2xl w-full max-w-md p-8 relative">
+    <button onclick="closeModal()" aria-label="Close" class="absolute top-4 right-4 text-on-surface-variant hover:text-deep-navy">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
+    <h2 class="font-headline-lg text-headline-lg text-deep-navy mb-2" id="modal-title">Reserve Your Session</h2>
+    <p class="text-slate-text text-body-sm mb-6" id="modal-subtitle">Choose how you'd like to connect with Keshav Karn.</p>
+    <div class="space-y-4">
+      <a href="https://wa.me/918520977573?text=Hi%20Keshav%2C%20I%27d%20like%20to%20book%20a%20strategic%20AI%20consultation." target="_blank"
+         class="flex items-center gap-4 w-full bg-[#25D366] text-white px-6 py-4 rounded-lg font-bold hover:brightness-110 transition-all">
+        <span class="material-symbols-outlined" aria-hidden="true">chat</span> WhatsApp — Chat Now
+      </a>
+      <a href="tel:8520977573"
+         class="flex items-center gap-4 w-full bg-deep-navy text-white px-6 py-4 rounded-lg font-bold hover:bg-black transition-all">
+        <span class="material-symbols-outlined" aria-hidden="true">call</span> Call: 85209 77573
+      </a>
+      <a href="https://mail.google.com/mail/?view=cm&to=keshav.karn@gmail.com&su=AI%20Transformation%20Consultation%20Request" target="_blank" rel="noopener noreferrer"
+         class="flex items-center gap-4 w-full border-2 border-deep-navy text-deep-navy px-6 py-4 rounded-lg font-bold hover:bg-deep-navy hover:text-white transition-all">
+        <span class="material-symbols-outlined" aria-hidden="true">mail</span> Email Me
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- TopNavBar -->
+<header class="bg-white shadow-sm border-b border-outline-variant top-0 sticky z-50">
+  <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-20">
+    <a class="text-headline-lg font-headline-lg font-black text-deep-navy tracking-tight" href="/AI4Everyone/">AI4EVERYONE</a>
+    <nav class="hidden md:flex items-center space-x-8" aria-label="Primary">
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/">Home</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/#stream-1">AI Builder</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/#stream-2">AI Engineering</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/enterprise-ai/">Build With Us</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/guides/">Guides</a>
+      <a class="text-on-surface-variant hover:text-action-orange transition-colors duration-300 font-subheading text-subheading" href="/AI4Everyone/#about">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a class="hidden sm:inline-flex items-center text-on-surface-variant hover:text-deep-navy font-semibold transition-all" href="tel:8520977573">
+        <span class="material-symbols-outlined mr-2" aria-hidden="true">call</span> Call Me
+      </a>
+      <button onclick="trackEvent('free_session_click',{location:'nav'});openModal('Join a Free Session', 'Connect with Keshav to get the next free session details and reserve your spot.')"
+              class="bg-deep-navy text-white px-6 py-2.5 rounded-lg font-bold hover:bg-black transition-all active:scale-95">Free Session</button>
+      <button id="hamburger" onclick="toggleMobileMenu()" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-1"></span>
+        <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-2"></span>
+        <span class="block w-6 h-0.5 bg-deep-navy transition-all" id="ham-3"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-outline-variant px-gutter py-4 space-y-3">
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/">Home</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/#stream-1">AI Builder</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/#stream-2">AI Engineering</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/enterprise-ai/">Build With Us</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/guides/">Guides</a>
+    <a onclick="closeMobileMenu()" class="block font-bold text-on-surface-variant py-2 hover:text-executive-gold" href="/AI4Everyone/#about">Contact</a>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="max-w-container-max mx-auto px-gutter pt-6 text-sm text-slate-text">
+  <a href="/AI4Everyone/" class="hover:text-executive-gold">Home</a> / <span class="text-deep-navy font-semibold">Agentic AI</span>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="relative overflow-hidden bg-mesh py-section-gap">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-stream2-teal/10 text-stream2-teal rounded-full mb-4 border-2 border-stream2-teal">
+      <span class="material-symbols-outlined text-[18px]" aria-hidden="true">workspace_premium</span>
+      <span class="font-label-caps text-label-caps">STREAM 2 · TRACK 2</span>
+    </div>
+    <h1 class="font-display-lg text-display-lg text-deep-navy mb-6 leading-tight max-w-3xl">Agentic AI: What It Is, and How It Differs From an AI Agent</h1>
+    <p class="text-subheading font-subheading text-slate-text mb-8 max-w-2xl">Tool calling, MCP, AI agents and agentic coding — with tools like Claude Code, Codex and Antigravity — plus integration into GitHub, Jira and ServiceNow. Stream 2's AI Integration &amp; Agent Engineering track.</p>
+    <div class="flex flex-wrap gap-4">
+      <a href="/AI4Everyone/#stream-2" onclick="trackEvent('cta_click',{cta:'explore_ai_engineering',location:'hero'})"
+         class="bg-action-orange text-white px-8 py-4 rounded-lg font-bold text-lg hover:brightness-110 transition-all shadow-lg">Explore AI Engineering</a>
+      <a href="#agent-vs-agentic" class="border-2 border-deep-navy text-deep-navy px-8 py-4 rounded-lg font-bold text-lg hover:bg-deep-navy hover:text-white transition-all">Agent vs Agentic AI</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS AGENTIC AI -->
+<section class="py-section-gap bg-white" id="what-is">
+  <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+    <div>
+      <span class="font-label-caps text-label-caps text-stream2-teal block mb-3">WHAT IS AGENTIC AI?</span>
+      <h2 class="font-display-lg text-display-lg text-deep-navy mb-4">AI That Plans, Uses Tools and Takes Action</h2>
+      <p class="text-slate-text mb-4">Agentic AI describes AI systems built to pursue a goal across multiple steps — planning what to do, calling tools to gather information or take action, checking the result, and continuing — rather than producing a single response to a single prompt.</p>
+      <p class="text-slate-text mb-4">The foundation is tool calling: giving an AI model a defined set of tools it can invoke, with structured inputs and outputs. Agentic behavior is what happens when a model uses that capability repeatedly and independently to make progress toward a goal, including deciding what to do next based on what it just learned.</p>
+      <p class="text-slate-text">This track teaches that stack end to end — tool calling, MCP, building AI agents, and agentic coding with tools like Claude Code, Codex and Antigravity — plus connecting agents into real systems such as GitHub, Jira and ServiceNow.</p>
+    </div>
+    <div class="bg-surface-container-low border border-outline-variant rounded-xl p-8">
+      <h3 class="font-bold text-deep-navy mb-4">What You'll Work With</h3>
+      <ul class="space-y-3 text-body-sm text-slate-text">
+        <li class="flex gap-2"><span class="material-symbols-outlined text-stream2-teal text-[18px] mt-0.5" aria-hidden="true">check</span> Tool calling and structured function interfaces</li>
+        <li class="flex gap-2"><span class="material-symbols-outlined text-stream2-teal text-[18px] mt-0.5" aria-hidden="true">check</span> MCP — connecting AI to real tools and data</li>
+        <li class="flex gap-2"><span class="material-symbols-outlined text-stream2-teal text-[18px] mt-0.5" aria-hidden="true">check</span> Building AI agents that plan and act across steps</li>
+        <li class="flex gap-2"><span class="material-symbols-outlined text-stream2-teal text-[18px] mt-0.5" aria-hidden="true">check</span> Agentic coding — Claude Code, Codex, Antigravity</li>
+        <li class="flex gap-2"><span class="material-symbols-outlined text-stream2-teal text-[18px] mt-0.5" aria-hidden="true">check</span> Integration with GitHub, Jira and ServiceNow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AGENT VS AGENTIC AI -->
+<section class="py-section-gap bg-deep-navy text-white relative overflow-hidden" id="agent-vs-agentic">
+  <div class="absolute inset-0 opacity-10" aria-hidden="true"><div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_10%,rgba(197,140,0,0.4),transparent_50%)]"></div></div>
+  <div class="max-w-container-max mx-auto px-gutter relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="font-label-caps text-label-caps text-executive-gold block mb-3">A COMMON POINT OF CONFUSION</span>
+      <h2 class="font-display-lg text-display-lg mb-4">AI Agent vs Agentic AI</h2>
+      <p class="text-subheading font-subheading text-surface-variant opacity-80">The terms are related but not identical — the distinction matters when you're designing a system.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="bg-white/5 border border-white/10 rounded-xl p-8">
+        <span class="material-symbols-outlined text-executive-gold text-[28px] mb-3 block" aria-hidden="true">smart_toy</span>
+        <h3 class="font-bold text-white mb-2">AI Agent</h3>
+        <p class="text-white/70 text-sm">A single instance — one AI system given a goal, a set of tools, and the ability to act on its own to reach that goal, typically within one workflow.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-8">
+        <span class="material-symbols-outlined text-executive-gold text-[28px] mb-3 block" aria-hidden="true">hub</span>
+        <h3 class="font-bold text-white mb-2">Agentic AI</h3>
+        <p class="text-white/70 text-sm">The broader approach or category — systems, whether one agent or several coordinated agents, that plan, use tools, and act autonomously across multiple steps. Every AI agent is an example of agentic AI; agentic AI also covers multi-agent, orchestrated systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MCP TIE-IN -->
+<section class="py-section-gap bg-white">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="text-center mb-14 max-w-3xl mx-auto">
+      <span class="font-label-caps text-label-caps text-executive-gold block mb-3">HOW AGENTS REACH REAL TOOLS</span>
+      <h2 class="font-display-lg text-display-lg text-deep-navy mb-4">Agentic AI Needs a Standard Way to Reach Tools</h2>
+      <p class="text-subheading font-subheading text-slate-text">MCP provides a standardized way for AI systems to access authorized tools and resources so AI can perform work instead of simply generating answers. It is the connective layer that makes agentic AI practical against real enterprise systems.</p>
+    </div>
+    <div class="flex justify-center">
+      <a href="/AI4Everyone/mcp-training/" onclick="trackEvent('internal_link_click',{to:'mcp-training'})" class="bg-surface-container-low border border-outline-variant p-8 rounded-xl hover:border-stream2-teal transition-all block max-w-md">
+        <span class="material-symbols-outlined text-stream2-teal text-[28px] mb-3 block" aria-hidden="true">hub</span>
+        <h3 class="font-bold text-deep-navy mb-2">MCP Training</h3>
+        <p class="text-slate-text text-sm">Go deeper on MCP — servers, clients, and connecting AI to Jira, ServiceNow and enterprise tools.</p>
+      </a>
+    </div>
+    <p class="text-center text-slate-text text-sm mt-10">Prefer a standalone explainer first? Read <a href="/AI4Everyone/guides/what-is-agentic-ai/" class="text-stream2-teal font-bold hover:underline">What Is Agentic AI?</a></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-section-gap bg-surface-container-low" id="faq">
+  <div class="max-w-container-max mx-auto px-gutter max-w-3xl">
+    <div class="text-center mb-12"><h2 class="font-display-lg text-display-lg text-deep-navy">Frequently Asked Questions</h2></div>
+    <div class="space-y-3">
+      <details class="bg-white border border-outline-variant rounded-lg p-5" ontoggle="if(this.open) trackEvent('faq_expand',{q:'agentic-what-is'})">
+        <summary class="font-bold text-deep-navy cursor-pointer">What is agentic AI?</summary>
+        <p class="text-slate-text text-body-sm mt-3">Agentic AI describes AI systems that can plan, use tools, and take multi-step action toward a goal with limited human intervention — rather than just responding once to a single prompt. It builds on tool calling and coordination across steps and, often, across multiple agents.</p>
+      </details>
+      <details class="bg-white border border-outline-variant rounded-lg p-5" ontoggle="if(this.open) trackEvent('faq_expand',{q:'agentic-vs-agent'})">
+        <summary class="font-bold text-deep-navy cursor-pointer">What is the difference between an AI agent and agentic AI?</summary>
+        <p class="text-slate-text text-body-sm mt-3">An AI agent is typically one instance — a single AI system given a goal, tools and the ability to act on its own. Agentic AI is the broader approach or category: systems (one agent or several working together) that plan, use tools, and act autonomously across multiple steps. Every AI agent is an example of agentic AI, but agentic AI also covers multi-agent and orchestrated systems.</p>
+      </details>
+      <details class="bg-white border border-outline-variant rounded-lg p-5" ontoggle="if(this.open) trackEvent('faq_expand',{q:'agentic-coding'})">
+        <summary class="font-bold text-deep-navy cursor-pointer">What is agentic coding?</summary>
+        <p class="text-slate-text text-body-sm mt-3">Agentic coding is using an AI coding agent — such as Claude Code, Codex, or Antigravity — to plan, write, test and modify code across a project with natural-language instructions, instead of writing every line by hand. The agent can read files, run commands and iterate toward a goal.</p>
+      </details>
+      <details class="bg-white border border-outline-variant rounded-lg p-5" ontoggle="if(this.open) trackEvent('faq_expand',{q:'agentic-mcp'})">
+        <summary class="font-bold text-deep-navy cursor-pointer">How does MCP relate to agentic AI?</summary>
+        <p class="text-slate-text text-body-sm mt-3">MCP provides a standardized way for AI systems to access authorized tools and resources so AI can perform work instead of simply generating answers. It is what lets an agentic AI system reliably reach real tools and data — including enterprise systems like GitHub, Jira and ServiceNow.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="bg-deep-navy py-section-gap text-white text-center">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <h2 class="font-display-lg text-display-lg mb-8">Ready to Build Agentic AI?</h2>
+    <p class="text-subheading font-subheading mb-10 max-w-2xl mx-auto opacity-80">Explore Stream 2 Track 2 — tool calling, MCP, agents and agentic coding.</p>
+    <a href="/AI4Everyone/#stream-2" onclick="trackEvent('cta_click',{cta:'explore_ai_engineering',location:'final_cta'})"
+       class="inline-block bg-white text-deep-navy px-12 py-5 rounded-lg font-bold text-xl hover:bg-executive-gold hover:text-white transition-all">Explore AI Engineering</a>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-deep-navy text-white border-t border-white/5">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-element-gap max-w-container-max mx-auto px-gutter py-section-gap">
+    <div class="space-y-6">
+      <span class="text-subheading font-subheading font-bold text-executive-gold block">AI4EVERYONE</span>
+      <p class="font-body-sm text-body-sm text-surface-variant opacity-80 max-w-xs">Practical AI education and AI engineering — from a 22+ year enterprise technology leader. Learn to make AI work.</p>
+      <div class="flex gap-4">
+        <a href="https://www.linkedin.com/in/keshavkarn" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-executive-gold hover:border-executive-gold transition-all duration-200" aria-label="LinkedIn"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">share</span></a>
+        <a href="https://wa.me/918520977573" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-executive-gold hover:border-executive-gold transition-all duration-200" aria-label="WhatsApp"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">chat</span></a>
+        <a href="https://www.youtube.com/@Ready4industry" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-executive-gold hover:border-executive-gold transition-all duration-200" aria-label="YouTube"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">smart_display</span></a>
+        <a href="https://www.instagram.com/ready4industry" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-executive-gold hover:border-executive-gold transition-all duration-200" aria-label="Instagram"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">photo_camera</span></a>
+      </div>
+    </div>
+    <div class="space-y-6">
+      <span class="font-subheading text-subheading font-bold">Quick Navigation</span>
+      <ul class="space-y-4">
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="/AI4Everyone/">Home</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="/AI4Everyone/#stream-1">AI Builder</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="/AI4Everyone/#stream-2">AI Engineering</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="/AI4Everyone/enterprise-ai/">Build With Us</a></li>
+        <li><a class="text-surface-variant opacity-80 hover:text-white hover:opacity-100 underline decoration-executive-gold transition-all duration-200" href="/AI4Everyone/guides/">Guides</a></li>
+      </ul>
+    </div>
+    <div class="space-y-6">
+      <span class="font-subheading text-subheading font-bold">Contact</span>
+      <ul class="space-y-4">
+        <li><a class="inline-flex items-center gap-2 text-executive-gold hover:text-white transition-all duration-200" href="https://www.linkedin.com/in/keshavkarn" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">share</span> linkedin.com/in/keshavkarn</a></li>
+        <li><a class="inline-flex items-center gap-2 text-surface-variant opacity-80 hover:text-white hover:opacity-100 transition-all duration-200" href="https://www.youtube.com/@Ready4industry" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">smart_display</span> @Ready4industry</a></li>
+        <li><a class="inline-flex items-center gap-2 text-surface-variant opacity-80 hover:text-white hover:opacity-100 transition-all duration-200" href="mailto:keshav.karn@gmail.com?subject=Support%20Request"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">mail</span> Contact Support</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918520977573?text=Hi%20Keshav%2C%20I%27d%20like%20to%20connect%20about%20AI4Everyone." target="_blank" rel="noopener noreferrer" onclick="trackEvent('whatsapp_click',{location:'floating_button'})" class="fixed bottom-8 right-8 z-50 flex items-center gap-3 bg-deep-navy text-white px-6 py-3 rounded-full shadow-2xl border border-executive-gold hover:bg-executive-gold hover:text-deep-navy transition-all duration-300">
+  <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+  <span class="font-bold" id="float-wa-label">Clear Your Doubts</span>
+</a>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function trackEvent(name, params) { window.dataLayer.push(Object.assign({ event: name }, params || {})); }
+
+  function openModal(title, subtitle) {
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-subtitle').textContent = subtitle;
+    const m = document.getElementById('contact-modal');
+    m.classList.remove('hidden'); m.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    const m = document.getElementById('contact-modal');
+    m.classList.add('hidden'); m.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('contact-modal').addEventListener('click', function(e){ if (e.target === this) closeModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger');
+    const open = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', open);
+    hamburger.setAttribute('aria-expanded', String(!open));
+    document.getElementById('ham-1').style.transform = open ? '' : 'translateY(8px) rotate(45deg)';
+    document.getElementById('ham-2').style.opacity  = open ? '' : '0';
+    document.getElementById('ham-3').style.transform = open ? '' : 'translateY(-8px) rotate(-45deg)';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.add('hidden');
+    document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+    document.getElementById('ham-1').style.transform = '';
+    document.getElementById('ham-2').style.opacity  = '';
+    document.getElementById('ham-3').style.transform = '';
+  }
+</script>
+</body>
+</html>

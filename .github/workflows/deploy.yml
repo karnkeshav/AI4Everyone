@@ -44,6 +44,17 @@ jobs:
           cp index.html dist/index.html
           cp robots.txt dist/robots.txt
           cp sitemap.xml dist/sitemap.xml
+          # SEO landing pages, enterprise page, and guides (blog) — explicit allowlist,
+          # never a blanket copy, so leads/registrations/app.js/config.js stay out of dist/
+          for d in ai-course ai-course-for-students ai-course-for-professionals \
+                   ai-engineering agentic-ai mcp-training ai-coding cloud-ai-engineering \
+                   enterprise-ai ai-automation power-bi-ai ai-for-cloud \
+                   ai-for-it-professionals guides; do
+            if [ -d "$d" ]; then
+              mkdir -p "dist/$d"
+              cp -r "$d"/. "dist/$d"/
+            fi
+          done
           touch dist/.nojekyll
 
       - name: Setup Pages
